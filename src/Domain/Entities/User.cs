@@ -1,4 +1,5 @@
 using System;
+using Domain.Enums;
 
 namespace Domain.Entities;
 
@@ -22,4 +23,10 @@ public class User
     public string Email { get; private set; }
     public string Password { get; private set; }
     public string CPF { get; private set; }
+    public Roles Role { get; private set; }
+
+    void SetUserAsAdmin()
+    {
+        Role = Roles.Admin;
+    }
 }
